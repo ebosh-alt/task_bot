@@ -43,3 +43,16 @@ class Countries(Sqlite3_Database):
             return obj
         return False
 
+    def get_id(self, name: str) -> int | bool:
+        data = self.get_by_other_field(value=name, field="name")
+        if data:
+            return data[0][0]
+        return False
+
+    def get_all(self) -> list[str]:
+        keys = self.get_keys()
+        result = []
+        for key in keys:
+            country = self.get(key)
+            result.append(country.name)
+        return result

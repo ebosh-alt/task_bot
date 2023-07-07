@@ -8,3 +8,4 @@ def get_mes(path: str, **kwargs):
     )
     tmpl = env.get_template(path)
     return tmpl.render(kwargs)
+

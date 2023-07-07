@@ -124,7 +124,7 @@ class Sqlite3_Database:
         conn.commit()
         conn.close()
 
-    def update_info(self, obj) -> None:
+    def update(self, obj) -> None:
         conn = self.sqlite_connect()
         curs = conn.cursor()
         for attr in obj:

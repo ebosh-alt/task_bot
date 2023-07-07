@@ -25,8 +25,8 @@ create table users(
     firstname nvarchar(25),
     lastname nvarchar(25),
     patronymic nvarchar(25),
-    document_id integer,
     country_id integer,
+    number_phone nvarchar(12),
     registration_date decimal,
     full_registered bool default FALSE,
     username nvarchar(25),
@@ -43,7 +43,6 @@ create table users(
     earnings_on_reff integer default 0,
     foreign key(referral_boss_id) references users(id),
     foreign key(referral_status_id) references referral_statuses(id),
-    foreign key(document_id) references documents(id),
     foreign key(country_id) references countries(id),
     foreign key(payment_method_id) references payment_methods(id)
 );
@@ -93,3 +92,4 @@ create table tasks_users(
     foreign key(user_id) references users(id)
 );
 
+drop table users;

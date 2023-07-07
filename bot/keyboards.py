@@ -53,3 +53,8 @@ def create_reply_keyboard(name_buttons: list, one_time_keyboard: bool = False, *
         sizes = (1,)
     keyboard.adjust(*sizes)
     return keyboard.as_markup(resize_keyboard=True, one_time_keyboard=one_time_keyboard)
+
+main_menu = create_reply_keyboard(["Назад"])
+
+
+
